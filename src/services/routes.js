@@ -2,8 +2,8 @@ import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Home from '../pages/home/home';
-import FormCorrentista from '../pages/correntista/formCorrentista';
-import ListCorrentista from '../pages/correntista/listCorrentista';
+import FormCorrentista from '../pages/correntista/form/formCorrentista';
+import ListCorrentista from '../pages/correntista/list/listCorrentista';
 
 const RoutesApp = () => {
     return (

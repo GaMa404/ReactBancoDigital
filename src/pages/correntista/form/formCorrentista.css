@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#input-nome
+{
+    text-transform: capitalize;
+}
+
+.container-form
+{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: 3vh;
+}
+
+.formCorrentista
+{
+    display: flex;
+    justify-content: center;
+    margin: 3vh;
+}
+
+form
+{
+   border: 2px solid gray;
+   border-radius: 2vh;
+   padding: 4vh;
+}
+
+.lbl-input
+{
+    width: fit-content;
+    margin: 2vh;
+}   
+
+.lbl-input label, input, button
+{
+    font-size: 3vh;
+    margin: 1vh;
+    padding: 1vh;
+}
+
+button
+{
+    background-color: transparent;
+    padding: 2vh;
+    border: 2px solid gray;
+    border-radius: 2vh;
+}

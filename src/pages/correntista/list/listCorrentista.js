@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 
-import api from "../../services/api";
+import api from "../../../services/api";
+import "./listCorrentista.css";
 
 const ListCorrentista = () => {
 
@@ -17,8 +18,8 @@ const ListCorrentista = () => {
     }, []);
 
     return (
-        <div className="container">
-            <div class="titulo">
+        <div className="container-list">
+            <div className="titulo-list">
                 <h1> Listar Correntista </h1>
                 
                 <nav>
@@ -31,22 +32,26 @@ const ListCorrentista = () => {
 
             <table>
                 <thead>
-                    <th> ID </th>
-                    <th> Nome </th>
-                    <th> Email </th>
-                    <th> Data de Nascimento </th>
-                    <th> CPF </th>
-                    <th> Data de Cadastro </th>
+                    <tr>
+                        <th> ID </th>
+                        <th> Nome </th>
+                        <th> Email </th>
+                        <th> Data de Nascimento </th>
+                        <th> CPF </th>
+                        <th> Data de Cadastro </th>
+                    </tr>
                 </thead>
 
                 {user.map(item => (
-                    <tbody>
-                        <td>{item?.id}</td>
-                        <td>{item?.nome}</td>
-                        <td>{item?.email}</td>
-                        <td>{item?.data_nasc}</td>
-                        <td>{item?.cpf}</td>
-                        <td>{item?.data_cadastro}</td>
+                    <tbody key={item.id}>
+                        <tr>
+                            <td>{item?.id}</td>
+                            <td>{item?.nome}</td>
+                            <td>{item?.email}</td>
+                            <td>{item?.data_nasc}</td>
+                            <td>{item?.cpf}</td>
+                            <td>{item?.data_cadastro}</td>
+                        </tr>
                     </tbody>
                 ))}
             </table>
