@@ -15,7 +15,6 @@ const FormCorrentista = () => {
 
     const handleSubmit = async () => {
         try {
-            alert('Correntista cadastrado!');
             await api.post('/correntista/salvar', correntista);
         }
         catch(err)
@@ -64,8 +63,6 @@ const FormCorrentista = () => {
                     </div>
 
                     <button type="submit" onClick={handleSubmit}> Enviar </button>
-
-
                 </form>
             </div>
         </div>
