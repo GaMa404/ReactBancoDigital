@@ -11,6 +11,7 @@ const FormCorrentista = () => {
         email: '',
         data_nasc: '',
         cpf: '',
+        senha: '',
     })
 
     const handleSubmit = async () => {
@@ -39,14 +40,12 @@ const FormCorrentista = () => {
                 <form>
                     <div className="lbl-input">
                         <label> Nome </label>
-                        <input id="input-nome" type="text" required value={correntista.nome} onChange={(e) => setCorrentista({ ...correntista, nome: e.target.value})}
-                        placeholder="Digite seu nome" />
+                        <input id="input-nome" type="text" required value={correntista.nome} onChange={(e) => setCorrentista({ ...correntista, nome: e.target.value})}/>
                     </div>
 
                     <div className="lbl-input">
                         <label> Email </label>
-                        <input type="email" required value={correntista.email} onChange={(e) => setCorrentista({ ...correntista, email: e.target.value})}
-                        placeholder="Digite seu email"/>
+                        <input type="email" required value={correntista.email} onChange={(e) => setCorrentista({ ...correntista, email: e.target.value})}/>
                     </div>
 
                     <div className="lbl-input">
@@ -56,10 +55,15 @@ const FormCorrentista = () => {
 
                     <div className="lbl-input">
                         <label> CPF </label>
-                        <ReactInputMask mask="999.999.999-99" value={correntista.cpf} required placeholder="Digite seu CPF"
+                        <ReactInputMask mask="999.999.999-99" value={correntista.cpf} required
                         onChange={(e) => {
                             const rawValue = e.target.value.replace(/[^\d]/g, '');
                             setCorrentista({ ...correntista, cpf: rawValue})}} />  
+                    </div>
+
+                    <div className="lbl-input">
+                        <label> Senha </label>
+                        <input type="password" required value={correntista.senha} onChange={(e) => setCorrentista({ ...correntista, senha: e.target.value})}/>
                     </div>
 
                     <button type="submit" onClick={handleSubmit}> Enviar </button>
