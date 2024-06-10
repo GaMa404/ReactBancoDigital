@@ -28,12 +28,6 @@ const FormCorrentista = () => {
         <div className="container-form">
             <div className="titulo-form">
                 <h1> Cadastrar Correntista </h1>
-                <nav>
-                    <ul>
-                        <li><Link to="/"> Home </Link></li>
-                        <li><Link to="/correntista"> Listar Correntista </Link></li>
-                    </ul>
-                </nav>
             </div>
 
             <div className="formCorrentista">
@@ -69,6 +63,12 @@ const FormCorrentista = () => {
                     <button type="submit" onClick={handleSubmit}> Enviar </button>
                 </form>
             </div>
+
+            <nav>
+                <ul>
+                    <li><Link to="/"> Já tem uma conta? Faça o login </Link></li>
+                </ul>
+            </nav>
         </div>
     );
 }
