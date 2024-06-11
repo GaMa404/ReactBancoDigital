@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import { Link } from "react-router-dom";
-
+//import { Link } from "react-router-dom";
 import api from "../../../services/api";
 import "./listCorrentista.css";
+import NavBar from "../../../components/navbar/navbar";
 
 const ListCorrentista = () => {
 
@@ -19,15 +19,9 @@ const ListCorrentista = () => {
 
     return (
         <div className="container-list">
+            <NavBar/>
             <div className="titulo-list">
                 <h1> Listar Correntista </h1>
-                
-                <nav>
-                    <ul>
-                        <li> <Link to="/"> Home </Link></li>
-                        <li> <Link to="/correntista/salvar"> Cadastrar Correntista </Link></li>
-                    </ul>
-                </nav>
             </div>
 
             <table>

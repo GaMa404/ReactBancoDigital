@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ReactInputMask from "react-input-mask";
 import api from "../../../services/api";
 import "./formCorrentista.css";
@@ -14,9 +14,13 @@ const FormCorrentista = () => {
         senha: '',
     })
 
-    const handleSubmit = async () => {
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             await api.post('/correntista/salvar', correntista);
+            navigate('/correntista');
         }
         catch(err)
         {
@@ -31,7 +35,7 @@ const FormCorrentista = () => {
             </div>
 
             <div className="formCorrentista">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="lbl-input">
                         <label> Nome </label>
                         <input id="input-nome" type="text" required value={correntista.nome} onChange={(e) => setCorrentista({ ...correntista, nome: e.target.value})}/>
@@ -60,7 +64,7 @@ const FormCorrentista = () => {
                         <input type="password" required value={correntista.senha} onChange={(e) => setCorrentista({ ...correntista, senha: e.target.value})}/>
                     </div>
 
-                    <button type="submit" onClick={handleSubmit}> Enviar </button>
+                    <button type="submit"> Enviar </button>
                 </form>
             </div>
 
