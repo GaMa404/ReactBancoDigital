@@ -4,51 +4,9 @@
     box-sizing: border-box;
 }
 
-#input-nome
-{
-    text-transform: capitalize;
-}
-
-.container
+.container-home
 {
     display: flex;
-    text-align: center;
     flex-direction: column;
-    font-size: 3vh;
-    color: black;
-}
-
-.container-login
-{
-    display: flex;
-    justify-content: center;
-    margin: 3vh;
-}
-
-form
-{
-   border: 2px solid gray;
-   border-radius: 2vh;
-   padding: 4vh;
-}
-
-.lbl-input-login
-{
-    width: fit-content;
-    margin: 2vh;
-}   
-
-.lbl-input-login label, input, button
-{
-    font-size: 3vh;
-    margin: 1vh;
-    padding: 1vh;
-}
-
-button
-{
-    background-color: transparent;
-    padding: 2vh;
-    border: 2px solid gray;
-    border-radius: 2vh;
+    text-align: center;
 }

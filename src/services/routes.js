@@ -4,7 +4,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from '../pages/home/home';
 import Login from '../pages/login/login';
 import FormCorrentista from '../pages/correntista/form/formCorrentista';
-import ListCorrentista from '../pages/correntista/list/listCorrentista';
 
 const RoutesApp = () => {
     return (
@@ -12,7 +11,6 @@ const RoutesApp = () => {
             <Routes>
                 <Route path="/" element={<Login/>} />
                 <Route path="/home" element={<Home/>} />
-                <Route path="/correntista" element={<ListCorrentista/>} />
                 <Route path="/correntista/salvar" element={<FormCorrentista/>} />
             </Routes>
         </BrowserRouter>

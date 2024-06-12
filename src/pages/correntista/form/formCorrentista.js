@@ -12,19 +12,26 @@ const FormCorrentista = () => {
         data_nasc: '',
         cpf: '',
         senha: '',
+        confirmarSenha: '',
     })
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            await api.post('/correntista/salvar', correntista);
-            navigate('/correntista');
+        if(correntista.senha === correntista.confirmarSenha){
+            try {
+                await api.post('/correntista/salvar', correntista);
+                navigate('/home');
+            }
+            catch(err)
+            {
+                console.error("Erro ao enviar formulário:", err);
+            }
         }
-        catch(err)
+        else
         {
-            console.error("Erro ao enviar formulário:", err);
+            alert("As senhas não coincidem!");
         }
     }
 
@@ -62,6 +69,11 @@ const FormCorrentista = () => {
                     <div className="lbl-input">
                         <label> Senha </label>
                         <input type="password" required value={correntista.senha} onChange={(e) => setCorrentista({ ...correntista, senha: e.target.value})}/>
+                    </div>
+
+                    <div className="lbl-input">
+                        <label> Confirmar Senha </label>
+                        <input type="password" required value={correntista.confirmarSenha} onChange={(e) => setCorrentista({ ...correntista, confirmarSenha: e.target.value})}/>
                     </div>
 
                     <button type="submit"> Enviar </button>

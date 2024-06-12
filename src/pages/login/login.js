@@ -20,7 +20,9 @@ const Login = () => {
             const data = response.data;
             if(data)
             {
-                navigate('/correntista');
+                // Guardando o id usuário na local storage do navegador para posteriormente usá-lo em uma requisição
+                localStorage.setItem("user_id", data.id);
+                navigate('/home');
             }
             else
             {
