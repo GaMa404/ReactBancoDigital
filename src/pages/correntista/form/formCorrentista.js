@@ -22,7 +22,7 @@ const FormCorrentista = () => {
         if(correntista.senha === correntista.confirmarSenha){
             try {
                 await api.post('/correntista/salvar', correntista);
-                navigate('/home');
+                navigate('/');
             }
             catch(err)
             {

@@ -7,6 +7,7 @@ const NavBar = () => {
         <div className="navbar">
             <nav>
                 <ul>
+                    <li className="navbar-logout"> <a href="/"> Sair </a> </li>
                     <li> <a href="/home"> Home </a> </li>
                 </ul>
             </nav>
